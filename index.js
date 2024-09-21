@@ -10,10 +10,7 @@ import cors from 'cors'
 
 const app = express();
 
-app.use(cors({
-    origin: 'http://localhost:5173', // Replace with your frontend URL
-    credentials: true // This is necessary to allow cookies
-  }));
+app.use(cors());
 
 
 
