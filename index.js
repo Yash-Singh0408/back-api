@@ -10,7 +10,10 @@ import cors from 'cors'
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+    origin: 'https://front-app-neon.vercel.app', // Replace with your frontend URL
+    credentials: true // This is necessary to allow cookies
+  }));
 
 
 
