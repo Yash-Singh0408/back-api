@@ -237,10 +237,10 @@ export const signup = async (req, res) => {
       html: `Please click the following link to verify your email: <a href="${verificationUrl}">${verificationUrl}</a>`
     });
 
-    if (error) {
-      console.error("Error sending email:", error);
-      return res.status(500).json({ success: false, message: "Error sending verification email" });
-    }
+    // if (error) {
+    //   console.error("Error sending email:", error);
+    //   return res.status(500).json({ success: false, message: "Error sending verification email" });
+    // }
 
     console.log("Email sent successfully:", data);
  
