@@ -11,9 +11,11 @@ import cors from 'cors'
 const app = express();
 
 app.use(cors({
-    origin: 'https://front-app-neon.vercel.app', // Replace with your frontend URL
-    credentials: true // This is necessary to allow cookies
-  }));
+  origin: (origin, callback) => {
+    callback(null, origin || '*'); // allow requests with no origin (like Postman)
+  },
+  credentials: true
+}));
 
 // Add this after setting up the cors middleware
 app.use((req, res, next) => {
